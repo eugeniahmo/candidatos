@@ -26,7 +26,7 @@ class CreateCandidatosTable extends Migration
             $table->string('INE');
             $table->bigInteger('representante_id')->unsigned();
             $table->timestamps();
-            $table->foreign('representante_id')->references('id')->on('categorias');
+            $table->foreign('representante_id')->references('id')->on('representantes');
 
         });
 

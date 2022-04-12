@@ -27,7 +27,7 @@ Route::get('/candidato/create',[CandidatoController::class,'create']);
 
 Route::resource('representante',RepresentanteController::class)->middleware('auth');
 Route::resource('candidato',CandidatoController::class)->middleware('auth');
-Auth::routes(['register'=>false, 'reset'=>false]);
+Auth::routes(['reset'=>false]);
 /*
 Route::resource('candidato',CandidatoController::class)->middleware('auth');
 Route::get('/home', [CandidatoController::class, 'index'])->name('home');
@@ -45,6 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
 		//la ruta inicial seria /home/	
 		//Route::post('/', ['as' => 'home.index', 'uses' => 'CandidatoController@index']);
 		Route::get('/', 'CandidatoController@index')->name('home');
+		//Auth::routes(['register'=>false, 'reset'=>false]);
 	 });
 });
 
